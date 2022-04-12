@@ -1,0 +1,175 @@
+/* custom css */
+
+/*  css tutorial - https://www.youtube.com/watch?v=l1mER1bV0N0 */
+
+/* style h1 element */
+h1 {
+  font-family: "Menlo";
+  font-size: 26px;
+  color: #0270BF;
+}
+
+/* align logo */
+#daMainQuestion {
+  text-align: left;
+}
+
+/* style h3 element */
+.h3 {
+  font-family: "Menlo";
+  font-size: 16px;
+  text-align: center;
+  color: #0270BF;
+}
+
+/* style generic body */
+body {
+  font-family: "Menlo";
+  font-size: 14px;
+  color: #000
+}
+
+/* style generic button */
+.btn {
+  background-color: #FFC000;
+  border-color: #FFC000;
+  color: #000;
+  font-family: "Menlo";
+  font-size: 14px;
+}
+
+/* style hover button */
+.btn:hover {
+  background-color: #0270BF;
+  border-color: #0270BF;
+  color: #fff;
+}
+
+/* style in button when pushed */
+.btn.btn-da.btn-primary:focus {
+  background-color: #051e61;
+  border-color: #051e61;
+  color: #fff
+}
+
+/* change text in clear button */
+.btn.btn-warning.btn-da.dasigclear {
+  visibility: hidden;
+  position: relative;
+}
+
+.btn.btn-warning.btn-da.dasigclear {
+  visibility: visible;
+  background-color: #df5d73;
+  border-color: #df5d73;
+  color: #000;
+  content: "Rensa";
+}
+
+.btn.btn-warning.btn-da.dasigclear:focus {
+  background-color: #d60f30;
+  border-color: #d60f30;
+}
+
+/* style in text help function */
+.daterm {
+  color: #0270BF;
+}
+
+.daterm:hover {
+  color: #FFC000;
+}
+
+/* style on input fields */
+.form-control {
+  font-family: "Menlo";
+  font-size: 14px;
+  color: #0270BF;
+}
+
+.form-control:focus {
+  font-size: 14px;
+  color: #FFC000;
+}
+
+/* style check boxes  */
+.labelauty-unchecked {
+  font-family: "Menlo";
+  font-size: 14px;
+  color: #0270BF;
+}
+
+/* style spacer(da.note) between fields  */
+div.col-md-12 hr {
+  border-top: 3px solid;
+  color: #FFC000;
+  padding-bottom: 25px;
+}
+
+/* style text (da.note) between fields  */
+div.col-md-12 p {
+  font-family: "Menlo";
+  font-size: 16px;
+  font-weight: bold;
+  color: #0270BF;
+  text-align: center;
+}
+
+div.col-md-8.dafieldpart label.btn-primary {
+  background-color: #FFC000;
+  border-color: #FFC000;
+  font-family: "Menlo";
+  color: #000;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+
+/* style dropdown area fields */
+.form-group {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.col-md-4.col-form-label.da-form-label.datext-right {
+  -ms-flex: 0 0 49.333333%;
+  flex: 0 0 49.333333%;
+  max-width: 49.333333%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.col-md-8.dafieldpart {
+  -ms-flex: 0 0 49.666667%;
+  flex: 0 0 49.666667%;
+  max-width: 49.666667%;
+}
+
+.form-control.dasingleselect {
+  left: 10px;
+  width: 100%
+}
+
+
+/* style da page for download of report */
+
+.da-attachment-alert.da-attachment-alert-single.alert.alert-success {
+  display: none
+}
+
+/* remove download button */
+div.da-attachment-download-wrapper #dadownload-tab0 {
+  visibility: hidden;
+  position: relative;
+
+}
+
+/* div.da-attachment-download-wrapper #dadownload-tab0:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "Ladda ned";
+} */
+
+/* change download text to swedish */
