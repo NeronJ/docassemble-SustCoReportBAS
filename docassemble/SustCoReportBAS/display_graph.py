@@ -48,12 +48,13 @@ def show_graph_radar(
     #    )
     # )
     fig.update_layout(
-        font_size=15,
+        font_size=26,
         font_family="Menlo",
         font_color="#0270BF",
-        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
+        polar=dict(radialaxis=dict(visible=True, range=[0, 1],tickvals=[0.1, 0.5, 0.9,],
+            ticktext=["liten", "medel", "stor",])),
         showlegend=True,
-        legend_font_size=13,
+        legend_font_size=22,
         width=width,
         height=height,
     )
@@ -139,8 +140,11 @@ def show_graph_scatter(df, filename, visualization_image, height, width):
         dict(marker_line_width=0.8, marker_line_color="black"),
         # textposition="top center"
     )
-    fig.update_xaxes(range=[-0.1, 1.1])
-    fig.update_yaxes(range=[-0.1, 1.1])
+    fig.update_xaxes(range=[-0.1, 1.1], ticktext=["Negativ påverkan", "Positiv påverkan"],
+    tickvals=[0.2, 0.8,],)
+    fig.update_yaxes(range=[-0.1, 1.1], ticktext=["Låg betydelse", "Hög betydelse"],
+    tickvals=[0.2, 0.8,],)
+    
     fig.add_hline(
         y=0.5, line_width=1, line_dash="solid", line_color="blue", opacity=0.25
     )

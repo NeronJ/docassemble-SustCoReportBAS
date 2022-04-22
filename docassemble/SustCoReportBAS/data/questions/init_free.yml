@@ -22,7 +22,7 @@ subquestion: |
 
   Det tar uppskattningsvis 15-20 minuter att svara på frågorna vilket generera en unik rapport för er verksamhet. 
    
-  Processen är helt anonym och inga uppgifter som kan kopplas till dig eller er verksamhet kommer att sparas. Klicka på länken för ytterligare information om hur {inlämnad information} hanteras.<br><br>
+  Processen är helt anonym och inga uppgifter som kan kopplas till dig eller er verksamhet kommer att sparas. Länken nedan innehåller ytterligare information om hur {inlämnad information} hanteras.<br><br>
 
 buttons:
   - Fortsätt: continue
@@ -40,7 +40,7 @@ section: Grunduppgifter
 question: |
   Grunduppgifter 
 subquestion: |
-  Nedanstående uppgifter efterfrågas för att sammanställa er specifika SustCoReport- dokument.<br><br>
+  Nedanstående uppgifter efterfrågas för att sammanställa er specifika SustCoReport.<br><br>
 fields:
   - Dagens datum: results[i].date
     datatype: date
@@ -278,6 +278,7 @@ question: |
   ISO 26000: de 7 ansvarssområdena
 #* Genom att fråga om [...] 
 subquestion: |
+  .[BEHÖVER BESKRIVNING AV "BETYDEANDE PÅVERKAN" - KAN DET VARA BÅDE POS OCH NEG TEX?]
   Beskriv hur er verksamhet förhåller sig till de 7 ansvarsområdena genom att svara på nedanstående frågor:<br><br>
   1) Hur betydande är **er verksamhets nuvarande påverkan** på ansvarsområdet?<br><br>
   2) Hur betydande är **er branschs nuvarande påverkan** på ansvarsområdet?<br><br>
@@ -288,19 +289,19 @@ fields:
   - note: <hr>
   
   - note: <p>{Verksamhetsstyrning}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_operation_est
+  - 1) Er verksamhets påverkan: results[i].q11_operation_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_operation_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_operation_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av<u>er branschs</u> påverkan om 10 år: results[i].q11_operation_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_operation_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_operation_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_operation_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -309,19 +310,19 @@ fields:
   - note: <hr>
   
   - note: <p>{Mänskliga rättigheter}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_mr_est
+  - 1) Er verksamhets påverkan: results[i].q11_mr_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_mr_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_mr_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av<u>er branschs</u> påverkan om 10 år: results[i].q11_mr_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_mr_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_mr_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_mr_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -330,19 +331,19 @@ fields:
   - note: <hr>
 
   - note: <p>{Arbetsförhållanden}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_arb_est
+  - 1) Er verksamhets påverkan: results[i].q11_arb_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_arb_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_arb_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av <u>er branschs</u> påverkan om 10 år: results[i].q11_arb_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_arb_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_arb_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_arb_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -351,19 +352,19 @@ fields:
   - note: <hr>
   
   - note: <p>{Miljö}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_milj_est
+  - 1) Er verksamhets påverkan: results[i].q11_milj_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_milj_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_milj_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av <u>er branschs</u> påverkan om 10 år: results[i].q11_milj_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_milj_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_milj_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_milj_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -372,19 +373,19 @@ fields:
   - note: <hr>
   
   - note: <p>{Goda verksamhetsmetoder}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_gverk_est
+  - 1) Er verksamhets påverkan: results[i].q11_gverk_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_gverk_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_gverk_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av <u>er branschs</u> påverkan om 10 år: results[i].q11_gverk_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_gverk_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_gverk_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_gverk_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -393,19 +394,19 @@ fields:
   - note: <hr>
   
   - note: <p>{Konsumentfrågor}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_konsum_est
+  - 1) Er verksamhets påverkan: results[i].q11_konsum_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_konsum_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_konsum_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av <u>er branschs</u> påverkan om 10 år: results[i].q11_konsum_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_konsum_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_konsum_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_konsum_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -414,19 +415,19 @@ fields:
   - note: <hr>
   
   - note: <p>{Samhällsengagemang och utveckling}<span>&nbsp;</span><span>&#9432;</span><br>
-  - 1) Betydelsen av <u>er verksamhets</u> påverkan: results[i].q11_samutv_est
+  - 1) Er verksamhets påverkan: results[i].q11_samutv_est
     required: False
     code: |
       scr_significance_likert
-  - 2) Betydelsen av <u>er branschs</u> påverkan idag: results[i].q11_samutv_est_industry
+  - 2) Er branschs påverkan <u>idag</u>: results[i].q11_samutv_est_industry
     required: False
     code: |
       scr_significance_likert
-  - 3) Betydelsen av <u>er branschs</u> påverkan om 10 år: results[i].q11_samutv_est_industry_10
+  - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_samutv_est_industry_10
     required: False
     code: |
       scr_significance_likert
-  - 4) Betydelsen av <u>er verksamhets</u> påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_samutv_est_stakeh
+  - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_samutv_est_stakeh
     required: False
     code: |
       scr_significance_likert
@@ -448,17 +449,17 @@ question: |
 #* Genom att fråga om [...] 
 
 subquestion: |
-  Beskriv hur er organisation förhåller sig till sina intressenter, det vill säga de individer eller grupper som har ett intresse i era beslut och/eller aktiviteter:<br><br>
-  1) Vilka är de 3 viktigaste intressenttyperna för **er verksamhet idag**?<br><br>
-  2) Vilka är de 3 viktigaste intressenttyperna för **er bransch idag**?<br><br>
-  3) Vilka är de 3 viktigaste intressenttyperna för **er bransch om 10 år**?
-  <br><br><br>
+  Beskriv hur er organisation förhåller sig till sina intressenter, det vill säga de individer eller grupper som har ett intresse i era beslut och/eller aktiviteter, genom att svara på nedanstående frågor.<br><br><br>
+#  1) Vilka är de 5 viktigaste intressenttyperna för **er verksamhet idag**?<br><br>
+#  2) Vilka är de 5 viktigaste intressenttyperna för **er bransch idag**?<br><br>
+#  3) Vilka är de 5 viktigaste intressenttyperna för **er bransch om 10 år**?
+#  <br><br><br>
 
 fields:
   - note: <hr>
 
-  - note:  Vilka är de 3 viktigaste intressenttyperna för **er verksamhet idag**?
-  - 1) 3 viktgaste intressenterna: results[i].import_stakeholders
+  - note: 1) Vilka är de 5 viktigaste intressenttyperna för **er verksamhet idag**?
+  - Svar: results[i].import_stakeholders
     required: False
     datatype: checkboxes
     choices:
@@ -484,12 +485,12 @@ fields:
       - Styrelse
       - Övriga
     none of the above: False
-    maxlength: 3
+    maxlength: 5
 
   - note: <hr>
 
-  - note: Vilka är de 3 viktigaste intressenttyperna för **er bransch idag**?
-  - 2) Tre viktgaste intressenterna: results[i].import_stakeholders_ind
+  - note: 2) Vilka är de 5 viktigaste intressenttyperna för **er bransch idag**?
+  - Svar: results[i].import_stakeholders_ind
     required: False
     datatype: checkboxes
     #help: |
@@ -517,13 +518,13 @@ fields:
       - Styrelse
       - Övriga
     none of the above: False
-    maxlength: 3
+    maxlength: 5
 
   - note: <hr>
 
 
-  - note: Vilka är de 3 viktigaste intressenttyperna för **er bransch om 10 år**?
-  - 3) Tre viktgaste intressenterna: results[i].import_stakeholders_ind_10
+  - note: 3) Vilka är de 5 viktigaste intressenttyperna för **er bransch om 10 år**?
+  - Svar: results[i].import_stakeholders_ind_10
     required: False
     datatype: checkboxes
     #help: |
@@ -551,7 +552,7 @@ fields:
       - Styrelse
       - Övriga
     none of the above: False
-    maxlength: 3
+    maxlength: 5
 
   - note: <hr>
 
@@ -574,34 +575,41 @@ question: |
 
 subquestion: |
 
-  Genom prioritering kan de områden som ger mest effekt för både verksamheten och omvärlden identifieras. SustCoReport lyfter fram två prioriteringsgrunder - ansvarsområdena och FNs globala mål för hållbar utveckling. Ni kan sedan lägga till era prioriteringsgrunder baserat på er unika budget, kompetens, strategi och kommunikation.<br><br>
+  Genom prioritering kan de områden som ger mest effekt för både verksamheten och omvärlden identifieras. SustCoReport lyfter fram två prioriteringsgrunder - de tidigare redogjorda ansvarsområdena samt FNs globala mål för hållbar utveckling. Ni kan sedan lägga till era prioriteringsgrunder baserat på er unika budget, kompetens, strategi och kommunikation.<br><br>
 
   Ge svar på hur er organisation prioriterar i er verksamhet genom att uppskatta svar på nedanstående frågor:<br><br>
 
 
 fields:
 
-  - note: Hur viktigt är ansvarsområdet för **er verksamhets övergripande verksamhetsmål** på 1-3 års sikt?
+  - note: 1) Hur viktigt är ansvarsområdet för **er verksamhets övergripande verksamhetsmål** på 1-3 års sikt?
 
   - Verksamhetsstyrning: results[i].q0_prio_oper_est
+    required: False
     code:
       scr_importance_likert
   - Mänskliga rättigheter: results[i].q0_prio_mr_est
+    required: False
     code:
       scr_importance_likert
   - Arbetsförhållanden: results[i].q0_prio_work_est
+    required: False
     code:
       scr_importance_likert
   - Miljö: results[i].q0_prio_env_est
+    required: False
     code:
       scr_importance_likert
   - Goda verksamhetsmetoder: results[i].q0_prio_good_work_est
+    required: False
     code:
       scr_importance_likert
   - Konsumentfrågor: results[i].q0_prio_consum_est
+    required: False
     code:
       scr_importance_likert
   - Samhällsengagemang och utveckling: results[i].q0_prio_soc_dev_est
+    required: False
     code:
       scr_importance_likert
 
@@ -678,7 +686,7 @@ code: |
   import pandas as pd
   #* df (creted above) with all varibles from the interview - to use in doc and questions below
   
-  #* first graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HEL TÄCK); 1.2 GRAD AV TILLÄMP (LINJE); ??? 1.4 VIKT FÖR INTRESSENT (LINJE)
+  #* first graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HELTÄCK #1); 1.2 GRAD AV TILLÄMP (HELTÄCK #2); 
   
   radar_1_categories = [
         "Ansvarighet",
@@ -721,11 +729,58 @@ code: |
   filename="radar_1.png",
   visualization_image=visualization_image_radar_1,
   height=800,
-  width=800)
+  width=1100)
 
-  #* second graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE (HEL TÄCK); 2.4 VIKT AV PÅVERKAN ENLIGT INTRESSENT (LINJE);
+  #####
+  #* second graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HEL TÄCK); 1.3 VIKT FÖR BRANSCH OM 10 ÅR (LINJE)
   
   radar_2_categories = [
+        "Ansvarighet",
+        "Transparens",
+        "Etiskt<br>uppförande",
+        "Intressenternas<br>intressen",
+        "Rättsstatens<br>principer",
+        "Internationella<br>uppförandenormer",
+        "mänskliga<br>rättigheter",
+    ]
+  
+  radar_2_t1_name = "Viktigt för verksamhet"
+  
+  radar_2_t1 = df[[
+    "Q5_ansvarighet",
+    "Q5_transparens",
+    "Q5_etiskt_uppförande",
+    "Q5_intressenternas_intressen",
+    "Q5_rättsstatens_principer",
+    "Q5_internationella_uppförandenormer",
+    "Q5_mänskliga_rättigheter"]]
+  
+  radar_2_t2_name = "Viktigt för bransch om 10 år"
+
+  radar_2_t2 = df[["Q5_ansvarighet_10",
+    "Q5_transparens_10",
+    "Q5_etiskt_uppförande_10",
+    "Q5_intressenternas_intressen_10",
+    "Q5_rättsstatens_principer_10",
+    "Q5_internationella_uppförandenormer_10",
+    "Q5_mänskliga_rättigheter_10",]]
+
+
+  radar_plot_2 = show_graph_radar(t1=radar_2_t1,
+  t2=radar_2_t2,
+  t1_name=radar_2_t1_name,
+  t2_name=radar_2_t2_name,
+  categories=radar_2_categories,
+  filename="radar_2.png",
+  visualization_image=visualization_image_radar_2,
+  height=800,
+  width=1100)
+
+  #######
+
+  #* third graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE (HELTÄCK #1); 2.4 VIKT AV PÅVERKAN ENLIGT INTRESSENT (HELTÄCK #2);
+  
+  radar_3_categories = [
     "Verksamhets-<br>styrning",
     "Mänskliga<br>rättigheter",
     "Arbets-<br>förhållanden",
@@ -734,9 +789,9 @@ code: |
     "Konsument-<br>frågor",
     "Samhälls-<br>engagemang<br>& utveckling",]  
 
-  radar_2_t1_name = "Verksamhetens betydande påverkan"
+  radar_3_t1_name = "Verksamhetens betydande påverkan"
   
-  radar_2_t1 = df[[
+  radar_3_t1 = df[[
     "Q11_verk_organisation",
     "Q11_mr_organisation",
     "Q11_arb_organisation",
@@ -745,9 +800,9 @@ code: |
     "Q11_konsum_organisation",
     "Q11_samutv_organisation",]]
   
-  radar_2_t2_name = "Intressenters syn på påverkan"
+  radar_3_t2_name = "Intressenters syn på påverkan"
 
-  radar_2_t2 = df[[
+  radar_3_t2 = df[[
     "Q11_verk_intressent",
     "Q11_mr_intressent",
     "Q11_arb_intressent",
@@ -756,19 +811,62 @@ code: |
     "Q11_konsum_intressent",
     "Q11_samutv_intressent",]]
 
-  radar_plot_2 = show_graph_radar(
-    t1=radar_2_t1,
-    t2=radar_2_t2,
-    t1_name=radar_2_t1_name,
-    t2_name=radar_2_t2_name,
-    categories=radar_2_categories,
-    filename="radar_2.png",
-    visualization_image=visualization_image_radar_2,
+  radar_plot_3 = show_graph_radar(
+    t1=radar_3_t1,
+    t2=radar_3_t2,
+    t1_name=radar_3_t1_name,
+    t2_name=radar_3_t2_name,
+    categories=radar_3_categories,
+    filename="radar_3.png",
+    visualization_image=visualization_image_radar_3,
     height=800,
-    width=800)
+    width=1100)
+  
+  #####
+  #* Fourth graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE (HELTÄCK #1); 2.3 BRANSCHENS FRAMTIDA PÅVERKAN PÅ ANSVARSOMRÅDE (HELTÄCK #2);
+  
+  radar_4_categories = [
+    "Verksamhets-<br>styrning",
+    "Mänskliga<br>rättigheter",
+    "Arbets-<br>förhållanden",
+    "Miljö",
+    "Goda<br>verksamhets-<br>metoder",
+    "Konsument-<br>frågor",
+    "Samhälls-<br>engagemang<br>& utveckling",]  
 
+  radar_4_t1_name = "Verksamhetens betydande påverkan"
+  
+  radar_4_t1 = df[[
+    "Q11_verk_organisation",
+    "Q11_mr_organisation",
+    "Q11_arb_organisation",
+    "Q11_milj_organisation",
+    "Q11_gverk_organisation",
+    "Q11_konsum_organisation",
+    "Q11_samutv_organisation",]]
+  
+  radar_4_t2_name = "Branschens framtida påverkan"
 
-  #* Third graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE; VIKT AV ANSVARSOMRÅDEN FÖR AFFÄREN/STRATEGIN 4.1 (Y AXIS)
+  radar_4_t2 = df[["Q11_verk_10",
+    "Q11_mr_10",
+    "Q11_arb_10",
+    "Q11_milj_10",
+    "Q11_gverk_10",
+    "Q11_konsum_10",
+    "Q11_samutv_10",]]
+
+  radar_plot_4 = show_graph_radar(
+    t1=radar_4_t1,
+    t2=radar_4_t2,
+    t1_name=radar_4_t1_name,
+    t2_name=radar_4_t2_name,
+    categories=radar_4_categories,
+    filename="radar_4.png",
+    visualization_image=visualization_image_radar_4,
+    height=800,
+    width=1100)
+
+  #* Fifth graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE; VIKT AV ANSVARSOMRÅDEN FÖR AFFÄREN/STRATEGIN 4.1 (Y AXIS)
   
   scatter_1a = df[[
       "Q11_verk_organisation",
@@ -810,7 +908,7 @@ code: |
     scatter_1_t1_name : scatter_1_t1,
     scatter_1_t2_name : scatter_1_t2 })
 
-  scatter_plot = show_graph_scatter(df=df_scatter,   filename="scatter_plot.png", visualization_image=visualization_image_scatter, height=400, width=900)
+  scatter_plot = show_graph_scatter(df=df_scatter,   filename="scatter_plot.png", visualization_image=visualization_image_scatter, height=500, width=900)
 
 
 ---
@@ -886,13 +984,15 @@ question: |
   Gratulerar, du har nu skapat din SustCoReport som kan ligga till grund för din organisations fortsatt hållbarhetsarbete.
   
   Lycka till! 
+  
+  [MER TEXT HÄR? MER INFO OM TS? MER INFO OM STÖD?]
 
 buttons:
   - Avsluta: exit
     url: https://sustcoreport.se/
   #- Konsultstöd: exit
   #  url: https://amap.se/
-  #- SIS/TS 2:2021: exit
-  #  url: https://www.sis.se/en/produkter/management-system/social-responsibility/sists-22021/
+  - SIS/TS 2:2021: exit
+    url: https://www.sis.se/en/produkter/management-system/social-responsibility/sists-22021/
 
 

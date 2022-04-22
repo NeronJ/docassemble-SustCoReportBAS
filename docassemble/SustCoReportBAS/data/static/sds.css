@@ -101,9 +101,10 @@ body {
 
 /* style spacer(da.note) between fields  */
 div.col-md-12 hr {
-  border-top: 3px solid;
+  border-top: .8px solid;
   color: #FFC000;
-  padding-bottom: 25px;
+  padding-bottom: 3px;
+  opacity: .65;
 }
 
 /* style text (da.note) between fields  */
@@ -130,6 +131,13 @@ div.col-md-8.dafieldpart label.btn-primary {
   margin-bottom: 1rem;
   width: 100%;
 }
+
+.form-select.dasingleselect {
+  font-family: "Menlo";
+  color: #0270BF;
+  font-size: 14px;
+}
+
 
 .col-md-4.col-form-label.da-form-label.datext-right {
   -ms-flex: 0 0 49.333333%;

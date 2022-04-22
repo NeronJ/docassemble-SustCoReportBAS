@@ -46,6 +46,12 @@ objects:
   - visualization_image_radar_2: DAFile
     datatype: file
     maximum image size: 1024
+  - visualization_image_radar_3: DAFile
+    datatype: file
+    maximum image size: 1024
+  - visualization_image_radar_4: DAFile
+    datatype: file
+    maximum image size: 1024
   - visualization_image_scatter: DAFile
     datatype: file
     maximum image size: 1024
