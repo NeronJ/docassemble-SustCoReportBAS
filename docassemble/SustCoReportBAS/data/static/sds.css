@@ -52,6 +52,14 @@ body {
   color: #fff
 }
 
+/* style in stakeholder button when pushed */
+.form-label.btn-primary {
+  background-color: #FFC000;
+  border-color: #FFC000;
+  color: #000;
+  font-size: 14px;
+}
+
 /* change text in clear button */
 .btn.btn-warning.btn-da.dasigclear {
   visibility: hidden;
@@ -171,6 +179,15 @@ div.da-attachment-download-wrapper #dadownload-tab0 {
   position: relative;
 
 }
+
+
+.da-button-set.da-field-buttons {
+  position: absolute;
+  bottom: 0;
+}
+
+
+
 
 /* div.da-attachment-download-wrapper #dadownload-tab0:after {
   visibility: visible;

@@ -16,7 +16,7 @@ code: |
   turnaround_dropdown = OrderedDict([ ('Mindre än 1 miljon SEK', 'Mindre än 1 miljon SEK'), ('1-3 miljoner SEK', '1-3 miljoner SEK'), ('3-5 miljoner SEK', '3-5 miljoner SEK'), ('5-10 miljoner SEK', '5-10 miljoner SEK'), ('10-50 miljoner miljoner SEK', '10-50 miljoner miljoner SEK'), ('50-100 SEK', '50-100 SEK'), ('Mer än 100 miljoner SEK', 'Mer än 100 miljoner SEK') ])
 
 
-  scr_importance_likert = OrderedDict([ (1,'5 - Mycket viktig'), (0.75, '4 - Viss positiv påverkan'), (0.5, '3 - Varken eller'), (0.25,'2 - Ganska oviktig'), (0,'1 - Mycket oviktig'), ])
+  scr_importance_likert = OrderedDict([ (1,'5 - Mycket viktig'), (0.75, '4 - Ganska viktig'), (0.5, '3 - Varken eller'), (0.25,'2 - Ganska oviktig'), (0,'1 - Mycket oviktig'), ])
 
   scr_significance_likert = OrderedDict([ (1,'5 - Avsevärd positiv påverkan'), (0.75, '4 - Viss positiv påverkan'), (0.5, '3 - Ingen direkt påverkan'), (0.25,'2 – Viss negativ påverkan'), (0,'1 - Avsevärd negativ påverkan'), ])
 
@@ -71,11 +71,7 @@ columns:
   - Q5_mänskliga_rättigheter_tillämp: row_item.q5_resp_hr_imp_app
   - Q5_mänskliga_rättigheter_10: row_item.q5_resp_hr_imp_10
   - Q5_mänskliga_rättigheter_intressent: row_item.q5_resp_hr_imp_stakeh
-# Q7/8 - stakeholder assessment
-  - Q8_intressent_vikt: row_item.import_stakeholders.true_values()
-  - Q8_intressent_vikt_princip: row_item.import_stakeholders_ind.true_values()
-  - Q8_intressent_vikt_ansvarsområde: row_item.import_stakeholders_ind_10.true_values()
-# Q11 - sustainability areas of operations  
+# Q11 - responsebility areas of operations  
   - Q11_verk_organisation: row_item.q11_operation_est
   - Q11_verk_bransch: row_item.q11_operation_est_industry
   - Q11_verk_intressent: row_item.q11_operation_est_stakeh
@@ -104,6 +100,10 @@ columns:
   - Q11_samutv_bransch: row_item.q11_samutv_est_industry
   - Q11_samutv_intressent: row_item.q11_samutv_est_stakeh
   - Q11_samutv_10: row_item.q11_samutv_est_industry_10
+# Q7/8 - stakeholder assessment
+  - Q8_intressent_vikt: row_item.import_stakeholders.true_values()
+  - Q8_intressent_vikt_princip: row_item.import_stakeholders_ind.true_values()
+  - Q8_intressent_vikt_ansvarsområde: row_item.import_stakeholders_ind_10.true_values()
 # Q11/38 & Q13/22 - prio & sustainability areas of operations 
   - Q22_org_prio_verksamhet: row_item.q0_prio_oper_est
   - Q22_org_prio_mr: row_item.q0_prio_mr_est

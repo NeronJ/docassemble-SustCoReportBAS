@@ -9,7 +9,6 @@ modules:
   - .display_graph
 
 ---
-
 mandatory: True
 section: Introduktion
 question:  |
@@ -94,11 +93,8 @@ back button label: |
   Tillbaka
 
 ---
-
-
-
 #* Q5 SIS/TS:2
-mandatory: True
+#mandatory: True
 section: Principerna
 #decoration: sds_favicon
 question: |
@@ -135,7 +131,6 @@ fields:
     code: |
       scr_importance_likert
     
-  
   - note: <hr>
 
   - note: <p>{Transparens}<span>&nbsp;</span><span>&#9432;</span><br> 
@@ -269,7 +264,6 @@ back button label: |
   Tillbaka
 
 ---
-
 #* Q11 SIS/TS:2 - MR
 mandatory: True
 section: Ansvarsområden
@@ -442,7 +436,7 @@ back button label: |
 ---
 
 #* Q8 SIS/TS:2
-#mandatory: True
+mandatory: True
 section: Intressenter
 question: |
   ISO 26000: identifiera och engagera intressenter
@@ -459,7 +453,7 @@ fields:
   - note: <hr>
 
   - note: 1) Vilka är de 5 viktigaste intressenttyperna för **er verksamhet idag**?
-  - Svar: results[i].import_stakeholders
+  - : results[i].import_stakeholders
     required: False
     datatype: checkboxes
     choices:
@@ -490,7 +484,7 @@ fields:
   - note: <hr>
 
   - note: 2) Vilka är de 5 viktigaste intressenttyperna för **er bransch idag**?
-  - Svar: results[i].import_stakeholders_ind
+  - : results[i].import_stakeholders_ind
     required: False
     datatype: checkboxes
     #help: |
@@ -524,7 +518,7 @@ fields:
 
 
   - note: 3) Vilka är de 5 viktigaste intressenttyperna för **er bransch om 10 år**?
-  - Svar: results[i].import_stakeholders_ind_10
+  - : results[i].import_stakeholders_ind_10
     required: False
     datatype: checkboxes
     #help: |
@@ -615,7 +609,7 @@ fields:
 
   - note: <hr>
 
-  - note: Vilka 3 av FNs 17 globala mål för hållbar utveckling anser du är viktigast för **er verksamhets** långsiktiga framgång?
+  - note: 2) Vilka 3 av FNs 17 globala mål för hållbar utveckling anser du är viktigast för **er verksamhets** långsiktiga framgång?
 
   - Svar : results[i].q22_sdg_org
     required: False
@@ -643,7 +637,7 @@ fields:
 
   - note: <hr>
 
-  - note: Vilka 3 av FNs 17 globala mål för hållbar utveckling anser du är viktigast för **världens** långsiktiga framgång?
+  - note: 3) Vilka 3 av FNs 17 globala mål för hållbar utveckling anser du är viktigast för **världens** långsiktiga framgång?
 
   - Svar : results[i].q22_sdg_world
     required: False
@@ -685,7 +679,7 @@ mandatory: True
 code: |
   import pandas as pd
   #* df (creted above) with all varibles from the interview - to use in doc and questions below
-  
+  #df = df.replace(r'^\s*$', np.nan, regex=True)
   #* first graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HELTÄCK #1); 1.2 GRAD AV TILLÄMP (HELTÄCK #2); 
   
   radar_1_categories = [
@@ -732,7 +726,7 @@ code: |
   width=1100)
 
   #####
-  #* second graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HEL TÄCK); 1.3 VIKT FÖR BRANSCH OM 10 ÅR (LINJE)
+  #* second graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HELTÄCK #1); 1.3 VIKT FÖR BRANSCH OM 10 ÅR (HELTÄCK #2)
   
   radar_2_categories = [
         "Ansvarighet",
