@@ -5,6 +5,12 @@ import plotly.express as px
 
 # from PIL import Image
 
+def sort_empty_df(obj):
+  """function to populate none response with float 0.0 in the df for the graphs"""
+  if len(obj) > 2:
+    return float(obj)
+  else:
+    return float(0.0)
 
 def show_graph_radar(
     t1, t2, t1_name, t2_name, categories, filename, visualization_image, height, width
@@ -16,7 +22,8 @@ def show_graph_radar(
 
     fig.add_trace(
         go.Scatterpolar(
-            r=[float(obj) for obj in t1.transpose()[0].to_list()],
+            #r=[float(obj) for obj in t1.transpose()[0].to_list()],
+            r=[sort_empty_df(obj) for obj in t1.transpose()[0].to_list()],
             theta=categories,
             fill="toself",
             name=t1_name,
@@ -25,7 +32,8 @@ def show_graph_radar(
     )
     fig.add_trace(
         go.Scatterpolar(
-            r=[float(obj) for obj in t2.transpose()[0].to_list()],
+            #r=[float(obj) for obj in t2.transpose()[0].to_list()],  
+            r=[sort_empty_df(obj) for obj in t2.transpose()[0].to_list()],
             theta=categories,
             fill="toself",
             name=t2_name,
@@ -51,8 +59,7 @@ def show_graph_radar(
         font_size=26,
         font_family="Menlo",
         font_color="#0270BF",
-        polar=dict(radialaxis=dict(visible=True, range=[0, 1],tickvals=[0.1, 0.5, 0.9,],
-            ticktext=["liten", "medel", "stor",])),
+        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),#,tickvals=[0.1, 0.5, 0.9,], ticktext=["liten", "medel", "stor",])),
         showlegend=True,
         legend_font_size=22,
         width=width,
@@ -90,7 +97,7 @@ def show_graph_scatter(df, filename, visualization_image, height, width):
     )
     df_group = df_group.rename(columns={0: "Ansvarsområde_List"})
     df_group["count"] = df_group["Ansvarsområde_List"].apply(lambda x: len(x))
-    df_group["size"] = df_group["count"].apply(lambda x: np.log(x * 3))
+    df_group["size"] = df_group["count"].apply(lambda x: np.log(x * 5))
     df_group["abbr_text"] = df_group["Ansvarsområde_List"].apply(
         lambda x: ", ".join([abbr[o] for o in x])
     )
@@ -105,7 +112,7 @@ def show_graph_scatter(df, filename, visualization_image, height, width):
         x="Verksamhetens nuvarande påverkan på ansvarsområdet",
         y="Ansvarsområdets betydelse för verksamhetsmål",
         size="size",
-        size_max=20,
+        size_max=15,
         labels="abbr_text",
         color="Ansvarsområde",
         symbol="Ansvarsområde",

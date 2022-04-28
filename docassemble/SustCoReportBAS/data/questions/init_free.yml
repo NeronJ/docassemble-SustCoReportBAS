@@ -548,7 +548,6 @@ fields:
     none of the above: False
     maxlength: 5
 
-  - note: <hr>
 
 continue button label: |
   Fortsätt
@@ -749,7 +748,7 @@ code: |
     "Q5_internationella_uppförandenormer",
     "Q5_mänskliga_rättigheter"]]
   
-  radar_2_t2_name = "Viktigt för bransch om 10 år"
+  radar_2_t2_name = "Viktigt för bransch<br>om 10 år"
 
   radar_2_t2 = df[["Q5_ansvarighet_10",
     "Q5_transparens_10",
@@ -783,7 +782,7 @@ code: |
     "Konsument-<br>frågor",
     "Samhälls-<br>engagemang<br>& utveckling",]  
 
-  radar_3_t1_name = "Verksamhetens betydande påverkan"
+  radar_3_t1_name = "Verksamhetens betydande<br>påverkan"
   
   radar_3_t1 = df[[
     "Q11_verk_organisation",
@@ -794,7 +793,7 @@ code: |
     "Q11_konsum_organisation",
     "Q11_samutv_organisation",]]
   
-  radar_3_t2_name = "Intressenters syn på påverkan"
+  radar_3_t2_name = "Intressenters syn<br>på påverkan"
 
   radar_3_t2 = df[[
     "Q11_verk_intressent",
@@ -828,7 +827,7 @@ code: |
     "Konsument-<br>frågor",
     "Samhälls-<br>engagemang<br>& utveckling",]  
 
-  radar_4_t1_name = "Verksamhetens betydande påverkan"
+  radar_4_t1_name = "Verksamhetens betydande<br>påverkan"
   
   radar_4_t1 = df[[
     "Q11_verk_organisation",
@@ -871,8 +870,10 @@ code: |
       "Q11_konsum_organisation",
       "Q11_samutv_organisation",]]
   
-  scatter_1_t1 = [float(obj) for obj in scatter_1a.transpose()[0].to_list()]
   scatter_1_t1_name = "Verksamhetens nuvarande påverkan på ansvarsområdet"
+  
+  scatter_1_t1 = [sort_empty_df(obj) for obj in scatter_1a.transpose()[0].to_list()]
+  
 
   scatter_1b = df[[
       "Q22_org_prio_verksamhet",
@@ -882,11 +883,11 @@ code: |
       "Q22_org_prio_verkmetod",
       "Q22_org_prio_konsumentfråg",
       "Q22_org_prio_samhällutv",]]
-
-  scatter_1_t2 = [float(obj) for obj in scatter_1b.transpose()[0].to_list()]  
-  scatter_1_t2_name = "Ansvarsområdets betydelse för verksamhetsmål"
   
+  scatter_1_t2_name = "Ansvarsområdets betydelse för verksamhetsmål"
 
+  scatter_1_t2 = [sort_empty_df(obj) for obj in scatter_1b.transpose()[0].to_list()]
+    
   responsible_areas = [
     "Verksamhetsstyrning",
     "Mänskliga rättigheter",
