@@ -110,7 +110,7 @@ body {
 /* style spacer(da.note) between fields  */
 div.col-md-12 hr {
   border-top: .8px solid;
-  color: #FFC000;
+  color: #748094;
   padding-bottom: 3px;
   opacity: .65;
 }
@@ -180,12 +180,20 @@ div.da-attachment-download-wrapper #dadownload-tab0 {
 
 }
 
-
+/* Reposition the continue and back buttons to a fixed position at the bottom of the page */
 .da-button-set.da-field-buttons {
   position: absolute;
   bottom: 0;
 }
 
+/* Change english to Swedish in the download document page */
+/* Text to send */
+.card-header span {
+  display: none;
+}
+.card-header:after {
+  content: "Fylla i din e-post för att få dokumentet skickat till dig";
+}
 
 
 

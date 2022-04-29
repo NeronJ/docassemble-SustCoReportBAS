@@ -31,7 +31,7 @@ code: |
 table: results_table
 rows: results
 show: True
-require gathered: true
+require gathered: True
 columns:
 # backgrounds varible
   - Organisation: row_item.name
@@ -41,7 +41,8 @@ columns:
   - Region: row_item.region
   - Anställda: row_item.employee
   - Omsättning: row_item.turnaround
-  - Verksamhetsinriktning: row_item.op_focus.true_values()
+  - Verksamhetsinriktning: str(row_item.op_focus.true_values()).replace(", and ", ", och ")
+  - Verksamhetsinriktning_list: json.dumps([k for k,v in row_item.op_focus.items() if v == True])
 # Q5 - sustainability principles
   - Q5_ansvarighet: row_item.q5_respb_imp_est
   - Q5_ansvarighet_tillämp: row_item.q5_respb_imp_app
@@ -101,9 +102,13 @@ columns:
   - Q11_samutv_intressent: row_item.q11_samutv_est_stakeh
   - Q11_samutv_10: row_item.q11_samutv_est_industry_10
 # Q7/8 - stakeholder assessment
-  - Q8_intressent_vikt: row_item.import_stakeholders.true_values()
-  - Q8_intressent_vikt_princip: row_item.import_stakeholders_ind.true_values()
-  - Q8_intressent_vikt_ansvarsområde: row_item.import_stakeholders_ind_10.true_values()
+  - Q8_intressent_vikt: str(row_item.import_stakeholders.true_values()).replace(", and ", ", och ")
+  - Q8_intressent_vikt_list: json.dumps([k for k,v in row_item.import_stakeholders.items() if v == True])
+  - Q8_intressent_vikt_princip: str(row_item.import_stakeholders_ind.true_values()).replace(", and ", ", och ")
+  - Q8_intressent_vikt_princip_list: json.dumps([k for k,v in row_item.import_stakeholders_ind.items() if v == True])
+  - Q8_intressent_vikt_ansvarsområde: str(row_item.import_stakeholders_ind_10.true_values()).replace(", and ", ", och ")
+  - Q8_intressent_vikt_ansvarsområde_list: json.dumps([k for k,v in row_item.import_stakeholders_ind_10.items() if v == True])
+
 # Q11/38 & Q13/22 - prio & sustainability areas of operations 
   - Q22_org_prio_verksamhet: row_item.q0_prio_oper_est
   - Q22_org_prio_mr: row_item.q0_prio_mr_est
@@ -112,16 +117,12 @@ columns:
   - Q22_org_prio_verkmetod: row_item.q0_prio_good_work_est
   - Q22_org_prio_konsumentfråg: row_item.q0_prio_consum_est
   - Q22_org_prio_samhällutv: row_item.q0_prio_soc_dev_est
-  - Q22_sdg_organisation: row_item.q22_sdg_org.true_values()
-  - Q22_sdg_världen: row_item.q22_sdg_world.true_values()
+  - Q22_sdg_organisation: str(row_item.q22_sdg_org.true_values()).replace(", and ", ", och ")
+  - Q22_sdg_organisation_list: json.dumps([k for k,v in row_item.q22_sdg_org.items() if v == True])
+  - Q22_sdg_världen: str(row_item.q22_sdg_world.true_values()).replace(", and ", ", och ")
+  - Q22_sdg_världen_list: json.dumps([k for k,v in row_item.q22_sdg_world.items() if v == True])
 
 ---
-
-
-
-
-
-
 
 
 
