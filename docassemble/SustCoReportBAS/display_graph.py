@@ -13,7 +13,7 @@ def sort_empty_df(obj):
     return float(0.0)
 
 def show_graph_radar(
-    t1, t2, t1_name, t2_name, categories, filename, visualization_image, height, width
+    t1, t2, t1_name, t2_name, categories, filename, visualization_image, height, width, color="#FFC000"
 ):
 
     visualization_image.initialize(filename=filename)
@@ -27,7 +27,7 @@ def show_graph_radar(
             theta=categories,
             fill="toself",
             name=t1_name,
-            marker=dict(size=5, color="#FFC000"),
+            marker=dict(size=5, color=color),
         )
     )
     fig.add_trace(
@@ -56,17 +56,17 @@ def show_graph_radar(
     #    )
     # )
     fig.update_layout(
-        font_size=26,
+        font_size=30,
         font_family="Menlo",
         font_color="#0270BF",
-        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),#,tickvals=[0.1, 0.5, 0.9,], ticktext=["liten", "medel", "stor",])),
+        polar=dict(radialaxis=dict(visible=True, range=[0, 1],tickvals=[0, 0.2, 0.4, 0.6, 0.8, 1],)),## ticktext=["liten", "medel", "stor",])),
         showlegend=True,
-        legend_font_size=22,
+        legend_font_size=28,
         width=width,
         height=height,
     )
 
-    fig.write_image(visualization_image.path())
+    fig.write_image(visualization_image.path(), scale=2)
     plot = visualization_image
     return plot
 
@@ -138,7 +138,7 @@ def show_graph_scatter(df, filename, visualization_image, height, width):
         # ],
         font_family="Menlo",
         font_color="#0270BF",
-        font_size=12,
+        font_size=14,
         width=width,
         height=height,
         template="simple_white",
@@ -159,7 +159,7 @@ def show_graph_scatter(df, filename, visualization_image, height, width):
         x=0.5, line_width=1, line_dash="solid", line_color="blue", opacity=0.25
     )
 
-    fig.write_image(visualization_image.path())
+    fig.write_image(visualization_image.path(), scale=2)
     plot = visualization_image
     return plot
 

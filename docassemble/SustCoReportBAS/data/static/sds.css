@@ -31,32 +31,32 @@ body {
 
 /* style generic button */
 .btn {
-  background-color: #FFC000;
-  border-color: #FFC000;
-  color: #000;
+  background-color: #2962F6;
+  border-color: #2962F6;
+  color: #fff;
   font-family: "Menlo";
   font-size: 14px;
 }
 
 /* style hover button */
 .btn:hover {
-  background-color: #0270BF;
-  border-color: #0270BF;
+  background-color: #4AA4F8;
+  border-color: #4AA4F8;
   color: #fff;
 }
 
 /* style in button when pushed */
 .btn.btn-da.btn-primary:focus {
-  background-color: #051e61;
-  border-color: #051e61;
+  background-color: #4AA4F8;
+  border-color: #4AA4F8;
   color: #fff
 }
 
 /* style in stakeholder button when pushed */
 .form-label.btn-primary {
-  background-color: #FFC000;
-  border-color: #FFC000;
-  color: #000;
+  background-color: #4AA4F8;
+  border-color: #4AA4F8;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -81,30 +81,30 @@ body {
 
 /* style in text help function */
 .daterm {
-  color: #0270BF;
+  color: #2962F6;
 }
 
 .daterm:hover {
-  color: #FFC000;
+  color: #4AA4F8;
 }
 
 /* style on input fields */
 .form-control {
   font-family: "Menlo";
   font-size: 14px;
-  color: #0270BF;
+  color: #2962F6;
 }
 
 .form-control:focus {
   font-size: 14px;
-  color: #FFC000;
+  color: #2962F6;
 }
 
 /* style check boxes  */
 .labelauty-unchecked {
   font-family: "Menlo";
   font-size: 14px;
-  color: #0270BF;
+  color: #2962F6;
 }
 
 /* style spacer(da.note) between fields  */
@@ -120,15 +120,15 @@ div.col-md-12 p {
   font-family: "Menlo";
   font-size: 16px;
   font-weight: bold;
-  color: #0270BF;
+  color: #2962F6;
   text-align: center;
 }
 
 div.col-md-8.dafieldpart label.btn-primary {
-  background-color: #FFC000;
-  border-color: #FFC000;
+  background-color: #4AA4F8;
+  border-color: #4AA4F8;
   font-family: "Menlo";
-  color: #000;
+  color: #fff;
   font-size: 14px;
   padding-left: 5px;
 }
@@ -142,7 +142,7 @@ div.col-md-8.dafieldpart label.btn-primary {
 
 .form-select.dasingleselect {
   font-family: "Menlo";
-  color: #0270BF;
+  color: #2962F6;
   font-size: 14px;
 }
 

@@ -15,7 +15,9 @@ metadata:
 ## image varibles are set here
 images:
   'sds_favicon': sds_favicon.png
-  'sds_logo': sds_intro.png
+  'sds_intro': sds_intro.png
+  'ballon_intro': ballon.png
+  'kite_intro': kite_sun.png
   'report_all': ra.png
   'sustcoreport_logo': sustcoreport_logo.png
   'scr_question': scr_question.png

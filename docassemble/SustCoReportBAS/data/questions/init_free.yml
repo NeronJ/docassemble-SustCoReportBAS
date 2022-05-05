@@ -15,7 +15,7 @@ question:  |
   [FILE sustcoreport_logo]
 subquestion: |
 
-  [FILE sds_logo, 100%]
+  [FILE ballon_intro, 100%]
 
   Välkommen till *SustCoReport* - ett webbaserat verktyg där organisationer och företag kan utföra en initial analys för att komma igång med sitt hållbarhetsarbete.
 
@@ -272,7 +272,6 @@ question: |
   ISO 26000: de 7 ansvarssområdena
 #* Genom att fråga om [...] 
 subquestion: |
-  .[BEHÖVER BESKRIVNING AV "BETYDEANDE PÅVERKAN" - KAN DET VARA BÅDE POS OCH NEG TEX?]
   Beskriv hur er verksamhet förhåller sig till de 7 ansvarsområdena genom att svara på nedanstående frågor:<br><br>
   1) Hur betydande är **er verksamhets nuvarande påverkan** på ansvarsområdet?<br><br>
   2) Hur betydande är **er branschs nuvarande påverkan** på ansvarsområdet?<br><br>
@@ -463,9 +462,9 @@ fields:
       - Fackföreningar
       - Finansiärer
       - Försäkringsbolag
-      - Högskola/universitet
+      - Högskola/Universitet
       - Icke statliga organisationer
-      - Investerare/finansiärer
+      - Investerare/Finansiärer
       - Konsumenter
       - Kunder
       - Leverantörer
@@ -496,9 +495,9 @@ fields:
       - Fackföreningar
       - Finansiärer
       - Försäkringsbolag
-      - Högskola/universitet
+      - Högskola/Universitet
       - Icke statliga organisationer
-      - Investerare/finansiärer
+      - Investerare/Finansiärer
       - Konsumenter
       - Kunder
       - Leverantörer
@@ -530,9 +529,9 @@ fields:
       - Fackföreningar
       - Finansiärer
       - Försäkringsbolag
-      - Högskola/universitet
+      - Högskola/Universitet
       - Icke statliga organisationer
-      - Investerare/finansiärer
+      - Investerare/Finansiärer
       - Konsumenter
       - Kunder
       - Leverantörer
@@ -688,10 +687,10 @@ code: |
         "Intressenternas<br>intressen",
         "Rättsstatens<br>principer",
         "Internationella<br>uppförandenormer",
-        "Mänskliga<br>rättigheter",
+        "De mänskliga<br>rättigheterna",
     ]
   
-  radar_1_t1_name = "Viktigt för verksamhet"
+  radar_1_t1_name = "Viktigt för<br>verksamhet"
   
   radar_1_t1 = df[[
     "Q5_ansvarighet",
@@ -702,7 +701,7 @@ code: |
     "Q5_internationella_uppförandenormer",
     "Q5_mänskliga_rättigheter"]]
   
-  radar_1_t2_name = "Tillämpning i verksamhet"
+  radar_1_t2_name = "Tillämpning i<br>verksamhet"
 
   radar_1_t2 = df[[
     "Q5_ansvarighet_tillämp",
@@ -721,8 +720,9 @@ code: |
   categories=radar_1_categories,
   filename="radar_1.png",
   visualization_image=visualization_image_radar_1,
-  height=800,
-  width=1100)
+  height=900,
+  width=1200,
+  color="#2962F6")
 
   #####
   #* second graph --> 1.1 PRINCIP VIKT FÖR VERKSAMHET (HELTÄCK #1); 1.3 VIKT FÖR BRANSCH OM 10 ÅR (HELTÄCK #2)
@@ -734,10 +734,10 @@ code: |
         "Intressenternas<br>intressen",
         "Rättsstatens<br>principer",
         "Internationella<br>uppförandenormer",
-        "mänskliga<br>rättigheter",
+        "De mänskliga<br>rättigheterna",
     ]
   
-  radar_2_t1_name = "Viktigt för verksamhet"
+  radar_2_t1_name = "Viktigt för<br>verksamhet"
   
   radar_2_t1 = df[[
     "Q5_ansvarighet",
@@ -748,7 +748,7 @@ code: |
     "Q5_internationella_uppförandenormer",
     "Q5_mänskliga_rättigheter"]]
   
-  radar_2_t2_name = "Viktigt för bransch<br>om 10 år"
+  radar_2_t2_name = "Viktigt för<br>bransch om<br>10 år"
 
   radar_2_t2 = df[["Q5_ansvarighet_10",
     "Q5_transparens_10",
@@ -766,8 +766,9 @@ code: |
   categories=radar_2_categories,
   filename="radar_2.png",
   visualization_image=visualization_image_radar_2,
-  height=800,
-  width=1100)
+  height=900,
+  width=1200,
+  color="#2962F6")
 
   #######
 
@@ -782,7 +783,7 @@ code: |
     "Konsument-<br>frågor",
     "Samhälls-<br>engagemang<br>& utveckling",]  
 
-  radar_3_t1_name = "Verksamhetens betydande<br>påverkan"
+  radar_3_t1_name = "Verksamhetens<br>betydande<br>påverkan"
   
   radar_3_t1 = df[[
     "Q11_verk_organisation",
@@ -813,7 +814,8 @@ code: |
     filename="radar_3.png",
     visualization_image=visualization_image_radar_3,
     height=800,
-    width=1100)
+    width=1100,
+    color="#FF5358")
   
   #####
   #* Fourth graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE (HELTÄCK #1); 2.3 BRANSCHENS FRAMTIDA PÅVERKAN PÅ ANSVARSOMRÅDE (HELTÄCK #2);
@@ -827,7 +829,7 @@ code: |
     "Konsument-<br>frågor",
     "Samhälls-<br>engagemang<br>& utveckling",]  
 
-  radar_4_t1_name = "Verksamhetens betydande<br>påverkan"
+  radar_4_t1_name = "Verksamhetens<br>betydande påverkan"
   
   radar_4_t1 = df[[
     "Q11_verk_organisation",
@@ -838,7 +840,7 @@ code: |
     "Q11_konsum_organisation",
     "Q11_samutv_organisation",]]
   
-  radar_4_t2_name = "Branschens framtida påverkan"
+  radar_4_t2_name = "Branschens<br>framtida påverkan"
 
   radar_4_t2 = df[["Q11_verk_10",
     "Q11_mr_10",
@@ -857,7 +859,8 @@ code: |
     filename="radar_4.png",
     visualization_image=visualization_image_radar_4,
     height=800,
-    width=1100)
+    width=1100,
+    color="#FF5358")
 
   #* Fifth graph --> 2.1 VERKSAMHET NUVARANDE PÅVERKAN PÅ ANSVARSOMRÅDE; VIKT AV ANSVARSOMRÅDEN FÖR AFFÄREN/STRATEGIN 4.1 (Y AXIS)
   
@@ -935,7 +938,7 @@ question: Här är SustCoReport för ${df.Organisation[0]}
 
 attachments:
   - name: SustCoReport
-    filename: sustcoreport_bas_${df.Organisation[0]}
+    filename: sustcoreport_${df.Organisation[0]}
     docx template file: ra_temp.docx
     valid formats:
       - pdf
@@ -976,18 +979,17 @@ mandatory: True
 section: Avslutning
 #decoration: sds_favicon
 question: |
-  Gratulerar, du har nu skapat din SustCoReport som kan ligga till grund för din organisations fortsatt hållbarhetsarbete.
-  
+  Gratulerar, du har nu skapat din SustCoReport som kan ligga till grund för din organisations fortsatta hållbarhetsarbete.
+  <br>
   Lycka till! 
   
-  [MER TEXT HÄR? MER INFO OM TS? MER INFO OM STÖD?]
 
 buttons:
   - Avsluta: exit
     url: https://sustcoreport.se/
   #- Konsultstöd: exit
   #  url: https://amap.se/
-  - SIS/TS 2:2021: exit
-    url: https://www.sis.se/en/produkter/management-system/social-responsibility/sists-22021/
+  #- SIS/TS 2:2021: exit
+  #  url: https://www.sis.se/en/produkter/management-system/social-responsibility/sists-22021/
 
 
