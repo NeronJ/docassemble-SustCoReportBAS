@@ -43,9 +43,9 @@ subquestion: |
 fields:
   - Dagens datum: results[i].date
     datatype: date
-    required: False
+    required: True
   - Ditt namn: responsible_person_docinput
-    required: False
+    required: True
   - Organisationens namn: results[i].name.text
     required: False
   - Organisationsform: results[i].org_form
@@ -906,7 +906,7 @@ code: |
     scatter_1_t1_name : scatter_1_t1,
     scatter_1_t2_name : scatter_1_t2 })
 
-  scatter_plot = show_graph_scatter(df=df_scatter,   filename="scatter_plot.png", visualization_image=visualization_image_scatter, height=500, width=900)
+  scatter_plot = show_graph_scatter(df=df_scatter, filename="scatter_plot.png", visualization_image=visualization_image_scatter, height=500, width=900)
 
 
 ---
