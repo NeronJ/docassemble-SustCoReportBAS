@@ -14,9 +14,7 @@ section: Introduktion
 question:  |
   [FILE sustcoreport_logo]
 subquestion: |
-
-  [FILE ballon_intro, 100%]
-
+ 
   Välkommen till *SustCoReport* - ett webbaserat verktyg där organisationer och företag kan utföra en initial analys för att komma igång med sitt hållbarhetsarbete.
 
   Det tar uppskattningsvis 15-20 minuter att svara på frågorna vilket generera en unik rapport för er verksamhet. 
@@ -32,8 +30,8 @@ code: |
   df = create_df(results_table) #this is initatied in survey_variables - uses a DA table block but do not show it to the respondents.
   results.object_type = Thing
   results.there_are_any = True
----
 
+---
 mandatory: True
 section: Grunduppgifter
 question: |
@@ -45,38 +43,38 @@ fields:
     datatype: date
     required: True
   - Ditt namn: responsible_person_docinput
-    required: True
+    required: False
   - Organisationens namn: results[i].name.text
-    required: False
+    required: True
   - Organisationsform: results[i].org_form
-    required: False
+    required: True
     code: |
       orgform_dropdown
   - Organisationens huvudsäte: place_docinput
-    required: False
+    required: True
   - Bransch: results[i].industry
-    required: False
+    required: True
     code: |
       industry_dropdown
   - Annan bransch, nämligen: results[i].industry
-    required: False
+    required: True
     show if:
       variable: results[i].industry
       is: Annat
   - Region: results[i].region
-    required: False
+    required: True
     code: |
       region_dropdown
   - Antal anställda: results[i].employee
-    required: False
+    required: True
     code: |
       employee_dropdown
   - Omsättning: results[i].turnaround
-    required: False
+    required: True
     code: |
       turnaround_dropdown
   - Verksamhetsinriktning: results[i].op_focus
-    required: False
+    required: True
     datatype: checkboxes
     choices:
       - Export (kunder utomlands)
@@ -84,7 +82,7 @@ fields:
       - Produktion i utlandet
       - Representation i utlandet
       - Ingen internationell verksamhet
-    none of the above: False
+    none of the above: True
 
 continue button label: |
   Fortsätt
@@ -115,19 +113,19 @@ fields:
   - note: <p>{Ansvarighet}<span>&nbsp;</span><span>&#9432;</span><br>
 
   - 1) Vikten för er verksamhet: results[i].q5_respb_imp_est
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_respb_imp_app
-    required: False
+    required: True
     code: |
       scr_application_likert
   - 3) Vikten för er bransch om 10 år: results[i].q5_respb_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_respb_imp_stakeh
-    required: False
+    required: True
     code: |
       scr_importance_likert
     
@@ -135,19 +133,19 @@ fields:
 
   - note: <p>{Transparens}<span>&nbsp;</span><span>&#9432;</span><br> 
   - 1) Vikten för er verksamhet: results[i].q5_trans_imp_est
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_trans_imp_app
-    required: False
+    required: True
     code: |
       scr_application_likert
   - 3) Vikten för er bransch om 10 år: results[i].q5_trans_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_trans_imp_stakeh
-    required: False
+    required: True
     code: |
       scr_importance_likert
     
@@ -156,19 +154,19 @@ fields:
 
   - note: <p>{Etiskt uppförande}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Vikten för er verksamhet: results[i].q5_ethic_imp_est
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_ethic_imp_app
-    required: False
+    required: True
     code: |
       scr_application_likert
   - 3) Vikten för er bransch om 10 år: results[i].q5_ethic_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_ethic_imp_stakeh
-    required: False
+    required: True
     code: |
       scr_importance_likert
     
@@ -177,19 +175,19 @@ fields:
 
   - note: <p>{Respekt för intressenternas intressen}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Vikten för er verksamhet: results[i].q5_resp_stake_imp_est
-    required: False
+    required: True
     code: | 
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_resp_stake_imp_app
-    required: False
+    required: True
     code: |
      scr_application_likert
   - 3) Vikten för er bransch om 10 år: results[i].q5_resp_stake_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_resp_stake_imp_stakeh
-    required: False
+    required: True
     code: |
       scr_importance_likert
     
@@ -198,19 +196,19 @@ fields:
 
   - note: <p>{Respekt för rättsstatens principer}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Vikten för er verksamhet: results[i].q5_resp_state_imp_est
-    required: False
+    required: True
     code: | 
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_resp_state_imp_app
-    required: False
+    required: True
     code: |
      scr_application_likert
   - 3) Vikten för er bransch om 10 år: results[i].q5_resp_state_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_resp_state_imp_stakeh
-    required: False    
+    required: True    
     code: |
       scr_importance_likert
     
@@ -219,19 +217,19 @@ fields:
 
   - note: <p>{Respekt för internationella uppförandenormer}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Vikten för er verksamhet: results[i].q5_resp_int_imp_est
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_resp_int_imp_app
-    required: False
+    required: True
     code: |
      scr_application_likert
   - 3) Vikten för er bransch om 10 år: results[i].q5_resp_int_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_resp_int_imp_stakeh
-    required: False
+    required: True
     code: |
       scr_importance_likert
     
@@ -239,19 +237,19 @@ fields:
   - note: <hr>
   - note: <p>{Respekt för de mänskliga rättigheterna}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Vikten för er verksamhet: results[i].q5_resp_hr_imp_est
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 2) Tillämpningsgrad i er verksamhet: results[i].q5_resp_hr_imp_app
-    required: False
+    required: True
     code: |
      scr_application_likert
   - 3) Vikten för er bransch om 10 år<br><br><br>: results[i].q5_resp_hr_imp_10
-    required: False
+    required: True
     code: |
       scr_importance_likert
   - 4) Vikten för era intressenter: results[i].q5_resp_hr_imp_stakeh
-    required: False
+    required: True
     code: |
       scr_importance_likert
     
@@ -283,19 +281,19 @@ fields:
   
   - note: <p>{Verksamhetsstyrning}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_operation_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_operation_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_operation_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_operation_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -304,19 +302,19 @@ fields:
   
   - note: <p>{Mänskliga rättigheter}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_mr_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_mr_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_mr_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_mr_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -325,19 +323,19 @@ fields:
 
   - note: <p>{Arbetsförhållanden}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_arb_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_arb_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_arb_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_arb_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -346,19 +344,19 @@ fields:
   
   - note: <p>{Miljö}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_milj_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_milj_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_milj_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_milj_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -367,19 +365,19 @@ fields:
   
   - note: <p>{Goda verksamhetsmetoder}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_gverk_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_gverk_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_gverk_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_gverk_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -388,19 +386,19 @@ fields:
   
   - note: <p>{Konsumentfrågor}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_konsum_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_konsum_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_konsum_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>: results[i].q11_konsum_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -409,19 +407,19 @@ fields:
   
   - note: <p>{Samhällsengagemang och utveckling}<span>&nbsp;</span><span>&#9432;</span><br>
   - 1) Er verksamhets påverkan: results[i].q11_samutv_est
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 2) Er branschs påverkan <u>idag</u>: results[i].q11_samutv_est_industry
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 3) Er branschs påverkan <u>om 10 år</u>: results[i].q11_samutv_est_industry_10
-    required: False
+    required: True
     code: |
       scr_significance_likert
   - 4) Er verksamhets påverkan enligt <u>era intressenters</u><br><br>:  results[i].q11_samutv_est_stakeh
-    required: False
+    required: True
     code: |
       scr_significance_likert
 
@@ -453,7 +451,7 @@ fields:
 
   - note: 1) Vilka är de 5 viktigaste intressenttyperna för **er verksamhet idag**?
   - : results[i].import_stakeholders
-    required: False
+    required: True
     datatype: checkboxes
     choices:
       - Aktieägare
@@ -484,7 +482,7 @@ fields:
 
   - note: 2) Vilka är de 5 viktigaste intressenttyperna för **er bransch idag**?
   - : results[i].import_stakeholders_ind
-    required: False
+    required: True
     datatype: checkboxes
     #help: |
     #  Ansvarighet - att stå till svars för konsekvenserna av tagna beslut och genomförda aktiviteter.
@@ -518,7 +516,7 @@ fields:
 
   - note: 3) Vilka är de 5 viktigaste intressenttyperna för **er bransch om 10 år**?
   - : results[i].import_stakeholders_ind_10
-    required: False
+    required: True
     datatype: checkboxes
     #help: |
     #  Ansvarighet - att stå till svars för konsekvenserna av tagna beslut och genomförda aktiviteter.
@@ -577,31 +575,31 @@ fields:
   - note: 1) Hur viktigt är ansvarsområdet för **er verksamhets övergripande verksamhetsmål** på 1-3 års sikt?
 
   - Verksamhetsstyrning: results[i].q0_prio_oper_est
-    required: False
+    required: True
     code:
       scr_importance_likert
   - Mänskliga rättigheter: results[i].q0_prio_mr_est
-    required: False
+    required: True
     code:
       scr_importance_likert
   - Arbetsförhållanden: results[i].q0_prio_work_est
-    required: False
+    required: True
     code:
       scr_importance_likert
   - Miljö: results[i].q0_prio_env_est
-    required: False
+    required: True
     code:
       scr_importance_likert
   - Goda verksamhetsmetoder: results[i].q0_prio_good_work_est
-    required: False
+    required: True
     code:
       scr_importance_likert
   - Konsumentfrågor: results[i].q0_prio_consum_est
-    required: False
+    required: True
     code:
       scr_importance_likert
   - Samhällsengagemang och utveckling: results[i].q0_prio_soc_dev_est
-    required: False
+    required: True
     code:
       scr_importance_likert
 
@@ -610,7 +608,7 @@ fields:
   - note: 2) Vilka 3 av FNs 17 globala mål för hållbar utveckling anser du är viktigast för **er verksamhets** långsiktiga framgång?
 
   - Svar : results[i].q22_sdg_org
-    required: False
+    required: True
     datatype: checkboxes
     choices:
       - 1 - Ingen fattigdom
@@ -638,7 +636,7 @@ fields:
   - note: 3) Vilka 3 av FNs 17 globala mål för hållbar utveckling anser du är viktigast för **världens** långsiktiga framgång?
 
   - Svar : results[i].q22_sdg_world
-    required: False
+    required: True
     datatype: checkboxes
     choices:
       - 1 - Ingen fattigdom
@@ -906,7 +904,9 @@ code: |
     scatter_1_t1_name : scatter_1_t1,
     scatter_1_t2_name : scatter_1_t2 })
 
-  scatter_plot = show_graph_scatter(df=df_scatter, filename="scatter_plot.png", visualization_image=visualization_image_scatter, height=500, width=900)
+  scatter_plot = show_graph_scatter(df=df_scatter,   filename="scatter_plot.png", visualization_image=visualization_image_scatter, height=500, width=900)
+  
+  reponse_status_code=store_interview_results(df.loc[0,:].to_dict())
 
 
 ---
@@ -933,8 +933,9 @@ code: |
 
 mandatory: True
 section: Rapport
+css class: report_download
 #decoration: sds_favicon
-question: Här är SustCoReport för ${df.Organisation[0]}
+question: Ladda ned eller skicka ${df.Organisation[0]}:s kärnanalys.
 
 attachments:
   - name: SustCoReport
@@ -977,9 +978,10 @@ back button label: |
 
 mandatory: True
 section: Avslutning
+css class: scr_exit
 #decoration: sds_favicon
 question: |
-  Gratulerar, du har nu skapat din SustCoReport som kan ligga till grund för din organisations fortsatta hållbarhetsarbete.
+  Gratulerar, du har nu skapat din SustCoReport som kan ligga till grund för din organisations fortsatta arbete att bidra till hållbar utveckling.
   <br>
   Lycka till! 
   
